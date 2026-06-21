@@ -1,0 +1,483 @@
+{
+	"info": {
+		"_postman_id": "ced03fba-b06d-45e4-82e8-3a893ae81bc9",
+		"name": "Controle de Usuários - PBL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47581556"
+	},
+	"item": [
+		{
+			"name": "1. Cadastrar Usuário",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Leona\",\r\n  \"email\": \"leona@email.com\",\r\n  \"senha\": \"123\",\r\n  \"roleId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "1. Cadastrar Usuário - EXEMPLO",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Leona\",\r\n  \"email\": \"leona@email.com\",\r\n  \"senha\": \"123\",\r\n  \"roleId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "184"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b8-9Ek3i3K0jrEBGxiFlwALWpBmokM\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 21 Jun 2026 19:12:01 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 5,\n    \"nome\": \"Leona\",\n    \"email\": \"leona@email.com\",\n    \"senha\": \"$2b$10$AD8IK6KOQUlptS93brN0ouzX0q/OGWenTTLJ89Cgos0uzn4sVeVQi\",\n    \"status\": true,\n    \"createdAt\": \"2026-06-21T19:12:01.325Z\",\n    \"roleId\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "2. Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"leona@email.com\",\r\n  \"senha\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "2. Login - EXEMPLO",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"leona@email.com\",\r\n  \"senha\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "395"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"18b-4YWw8uBYqk5llLe7yt2HODerIu0\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 21 Jun 2026 19:16:43 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"usuario\": {\n        \"id\": 5,\n        \"nome\": \"Leona\",\n        \"email\": \"leona@email.com\",\n        \"senha\": \"$2b$10$AD8IK6KOQUlptS93brN0ouzX0q/OGWenTTLJ89Cgos0uzn4sVeVQi\",\n        \"status\": true,\n        \"createdAt\": \"2026-06-21T19:12:01.325Z\",\n        \"roleId\": 1,\n        \"role\": {\n            \"id\": 1,\n            \"nome\": \"Admin\"\n        }\n    },\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzgyMDY5NDAzLCJleHAiOjE3ODIxNTU4MDN9.dGiMDcIK31ZuXjGb-YsQp7tNYPK-nGdG3gWqjTv2Jxg\"\n}"
+				}
+			]
+		},
+		{
+			"name": "3. Listar Usuários",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6IkFkbWluIiwiaWF0IjoxNzgyMDY2ODg3LCJleHAiOjE3ODIxNTMyODd9.fguSIt1OOjsrc_aIEgbp0cazzT4Dg2c9o-caaaFXA9E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "3. Listar Usuários - EXEMPLO",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "217"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"d9-1tMb2wYu2s0CYFAfYXBWltQMH8o\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 21 Jun 2026 19:17:28 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 5,\n        \"nome\": \"Leona\",\n        \"email\": \"leona@email.com\",\n        \"senha\": \"$2b$10$AD8IK6KOQUlptS93brN0ouzX0q/OGWenTTLJ89Cgos0uzn4sVeVQi\",\n        \"status\": true,\n        \"createdAt\": \"2026-06-21T19:12:01.325Z\",\n        \"roleId\": 1,\n        \"role\": {\n            \"id\": 1,\n            \"nome\": \"Admin\"\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "4. Atualizar Usuário",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6IkFkbWluIiwiaWF0IjoxNzgyMDY2ODg3LCJleHAiOjE3ODIxNTMyODd9.fguSIt1OOjsrc_aIEgbp0cazzT4Dg2c9o-caaaFXA9E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Leona Alterado\",\r\n  \"email\": \"leona@email.com\",\r\n  \"status\": true,\r\n  \"roleId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"5"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "4. Atualizar Usuário - EXEMPLO",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Leona Alterado\",\r\n  \"email\": \"leona@email.com\",\r\n  \"status\": true,\r\n  \"roleId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"5"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "193"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"c1-6ge4XX6DlqEx655RL2SNijl7H0E\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 21 Jun 2026 19:18:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 5,\n    \"nome\": \"Leona Alterado\",\n    \"email\": \"leona@email.com\",\n    \"senha\": \"$2b$10$AD8IK6KOQUlptS93brN0ouzX0q/OGWenTTLJ89Cgos0uzn4sVeVQi\",\n    \"status\": true,\n    \"createdAt\": \"2026-06-21T19:12:01.325Z\",\n    \"roleId\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "5. Deletar Usuário",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Mywicm9sZSI6IkFkbWluIiwiaWF0IjoxNzgyMDY2ODg3LCJleHAiOjE3ODIxNTMyODd9.fguSIt1OOjsrc_aIEgbp0cazzT4Dg2c9o-caaaFXA9E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"5"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "5. Deletar Usuário",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"5"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "33"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"21-lYp3AYBcskU/UelsvTkfG2VkcRA\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 21 Jun 2026 19:18:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"mensagem\": \"Usuário removido.\"\n}"
+				}
+			]
+		}
+	]
+}

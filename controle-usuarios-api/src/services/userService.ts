@@ -9,8 +9,8 @@ export class UserService {
 
     const existe = await prisma.user.findUnique({
       where: {
-        email: data.email
-      }
+        email: data.email,
+      },
     });
 
     if (existe) {
@@ -24,15 +24,15 @@ export class UserService {
         nome: data.nome,
         email: data.email,
         senha,
-        roleId: data.roleId
-      }
+        roleId: data.roleId,
+      },
     });
 
     await prisma.log.create({
       data: {
         acao: `Usuário ${data.nome} criado.`,
-        userId: user.id
-      }
+        userId: user.id,
+      },
     });
 
     return user;
@@ -41,15 +41,15 @@ export class UserService {
   async findAll() {
     return prisma.user.findMany({
       include: {
-        role: true
-      }
+        role: true,
+      },
     });
   }
 
   async findById(id: number) {
     const user = await prisma.user.findUnique({
       where: { id },
-      include: { role: true }
+      include: { role: true },
     });
 
     if (!user) {
@@ -63,7 +63,7 @@ export class UserService {
     if (!data.nome) throw new Error("Nome obrigatório.");
 
     const usuario = await prisma.user.findUnique({
-      where: { id }
+      where: { id },
     });
 
     if (!usuario) {
@@ -76,15 +76,15 @@ export class UserService {
         nome: data.nome,
         email: data.email,
         status: data.status,
-        roleId: data.roleId
-      }
+        roleId: data.roleId,
+      },
     });
 
     await prisma.log.create({
       data: {
         acao: "Usuário atualizado.",
-        userId: user.id
-      }
+        userId: user.id,
+      },
     });
 
     return user;
@@ -92,7 +92,7 @@ export class UserService {
 
   async delete(id: number) {
     const usuario = await prisma.user.findUnique({
-      where: { id }
+      where: { id },
     });
 
     if (!usuario) {
@@ -100,14 +100,7 @@ export class UserService {
     }
 
     const user = await prisma.user.delete({
-      where: { id }
-    });
-
-    await prisma.log.create({
-      data: {
-        acao: "Usuário removido.",
-        userId: user.id
-      }
+      where: { id },
     });
 
     return user;

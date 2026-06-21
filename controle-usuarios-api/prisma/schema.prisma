@@ -35,7 +35,7 @@ model Log {
   createdAt DateTime @default(now())
 
   userId Int
-  user   User @relation(fields: [userId], references: [id])
+  user   User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model Session {
@@ -44,5 +44,5 @@ model Session {
   createdAt DateTime @default(now())
 
   userId Int
-  user   User @relation(fields: [userId], references: [id])
+  user   User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
