@@ -32,6 +32,13 @@ export class AuthService {
       }
     );
 
+    await prisma.session.create({
+      data: {
+        token,
+        userId: usuario.id
+      }
+    });
+
     return {
       usuario,
       token

@@ -3,6 +3,10 @@ import { gerarHash } from "../utils/hash";
 
 export class UserService {
   async create(data: any) {
+    if (!data.nome) throw new Error("Nome obrigatório.");
+    if (!data.email) throw new Error("Email obrigatório.");
+    if (!data.senha) throw new Error("Senha obrigatória.");
+
     const existe = await prisma.user.findUnique({
       where: {
         email: data.email
@@ -26,7 +30,7 @@ export class UserService {
 
     await prisma.log.create({
       data: {
-        acao: "Usuário criado.",
+        acao: `Usuário ${data.nome} criado.`,
         userId: user.id
       }
     });
@@ -56,6 +60,8 @@ export class UserService {
   }
 
   async update(id: number, data: any) {
+    if (!data.nome) throw new Error("Nome obrigatório.");
+
     const usuario = await prisma.user.findUnique({
       where: { id }
     });

@@ -14,8 +14,6 @@ router.get(
   controller.findAll
 );
 
-export default router;
-
 router.get(
   "/:id",
   authMiddleware,
@@ -36,3 +34,5 @@ router.delete(
   adminMiddleware,
   controller.delete
 );
+
+export default router;

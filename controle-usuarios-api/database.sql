@@ -1,0 +1,40 @@
+CREATE DATABASE controle_usuarios;
+
+USE controle_usuarios;
+
+CREATE TABLE roles (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL,
+    status BOOLEAN DEFAULT TRUE,
+    createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+    roleId INT NOT NULL,
+    FOREIGN KEY (roleId) REFERENCES roles(id)
+);
+
+CREATE TABLE logs (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    acao VARCHAR(255) NOT NULL,
+    createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+    userId INT NOT NULL,
+    FOREIGN KEY (userId) REFERENCES users(id)
+);
+
+CREATE TABLE sessions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    token TEXT NOT NULL,
+    createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+    userId INT NOT NULL,
+    FOREIGN KEY (userId) REFERENCES users(id)
+);
+
+INSERT INTO roles (nome)
+VALUES
+('Administrador'),
+('Usuario');
