@@ -60,4 +60,4 @@ export class UserController {
     }
   }
 
-} // <-- A classe termina somente aqui
+}
